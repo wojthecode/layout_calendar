@@ -13,15 +13,18 @@
   &__day {
     box-sizing: border-box;
     width: $square-size;
-    line-height: $square-size;
+    height: $square-size;
     background-color: $day-color;
     border: $square-border solid $border-color;
     text-align: center;
-    transition: transform $animation-time;
+    align-content: center;
+    transition:
+      transform $animation-time,
+      background-color $animation-time;
 
     &:hover {
       background-color: $day-hover;
-      transform: translateY($animatoin-move);
+      transform: translateY($animation-move);
       cursor: pointer;
     }
   }
@@ -36,6 +39,7 @@
     &--month-length-#{$days} > :nth-last-child(-n + #{31 - $days}) {
       visibility: hidden;
       height: 0;
+      margin-top: -1px;
     }
   }
 

@@ -1,11 +1,5 @@
 @use './variables';
 
 @function day-offset($offset) {
-  $gapOffset: 1;
-
-  @if $offset == 0 {
-    $gapOffset: 0;
-  }
-
-  @return variables.$square-size * $offset + variables.$gap-size * ($offset - $gapOffset);
+  @return (variables.$square-size + variables.$gap-size) * $offset;
 }
